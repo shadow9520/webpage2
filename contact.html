@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="./css/contact.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+   
+    <div id="main">
+      
+      <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Navigation bar at the top of the screen-->
+      <div class="topnav" id="myTopnav">
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Index</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      
+     <center> <h1>contact page</h1>
+      <h4>By:Benjamin Watts</h4></center>
+
+
+
+
+<!--The chat box and admin controls-->
+    <title>My Example</title>
+    <form method="post" action="https://ambitioussociableprotools.babyboy666.repl.co" id="usrform">
+      <input id="word" placeholder="Username" type="text" name="usrname" onkeyup="watchWords()"  required>
+      <div id="pwordb"></div>
+    <input name="comment" type="text" placeholder="Enter text here..." required>
+    <input id="submit" type="submit"name="submit" value="submit" onclick="on_submit()">
+    </form>
+    </div>
+    <div id="comments"></div>
+    <script src="script.js"></script>
+  </body>
+    <script>
+      function watchWords()
+      {
+        var watch_words = ['Admin', 'Bean'];
+        var textvalue = document.getElementById('word').value;
+        for(var i=0; i<watch_words.length; i++) {
+          if (~textvalue.indexOf(watch_words[i])){
+            if(watch_words[i] == 'Admin'){
+              document.getElementById("pwordb").innerHTML += "<input type='text' name ='pword' id='pword' placeholder='Password' >";
+            }else if(watch_words[i] == 'Bean'){
+              document.getElementById("pwordb").innerHTML += "<input type='text' name ='pword' id='pword' placeholder='Password' >";
+            }   
+          }
+        }
+      }
+    </script>
+
+    <script>
+        //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+        var url = "https://ambitioussociableprotools.babyboy666.repl.co/get.php";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+          //console.log(xhr.status);
+          //console.log(xhr.responseText);
+          json = xhr.responseText
+          json = JSON.parse(json)
+          comment = '';
+          i = 0
+          json.forEach(commcreate);
+          function commcreate (item, index, arr){
+            console.log(eval(`arr[${index}].Usrname`))
+            console.log(eval(`arr[${index}].Comment`))
+              //CONSTRUCTION OF ROWS HAVING
+              // DATA FROM JSON OBJECT
+              comment += '<br/>';
+              comment += '<div class="comment">';
+              comment += '<h1 class="author">' + 
+                  eval(`arr[${index}].Usrname`) + ":" + '</h1>';
+
+              comment += '<p class="text">' + 
+                  eval(`arr[${index}].Comment`) + '</p>';
+
+              comment += '</div>';
+              
+            };
+          comment2 = `${comment}`
+          document.getElementById("comments").innerHTML += comment2;
+          console.log('comment2')
+          }};
+          
+        xhr.send();
+    </script>
+</html>

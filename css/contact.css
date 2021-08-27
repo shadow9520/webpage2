@@ -90,3 +90,34 @@ body{
   border-bottom-color: orangered;
   border-bottom-style: solid;
 }
+.admincomment{
+  align-self: center;
+  border: 5px red;
+  border-style: ridge;
+  box-shadow: 3px;
+  background-color: lightgray;
+  width:50%;
+  padding: 5px;
+}
+.admincomment .author{
+  border-bottom: 2px;
+  border-bottom-color: darkred;
+  border-bottom-style: solid;
+}
+.echocomment{
+  align-self: center;
+  border: 5px red;
+  border-style: ridge;
+  box-shadow: 3px;
+  background-color: lightgray;
+  width:50%;
+  padding: 5px;
+}
+.echocomment .author{
+  border-bottom: 2px;
+  border-bottom-color: darkred;
+  border-bottom-style: solid;
+}
+.echocomment .author .pic{
+  float: left;
+}

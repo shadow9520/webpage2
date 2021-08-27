@@ -1,10 +1,17 @@
 to do list:
-
-- finish the about page for the final product
-- get more organized for the final prduct of the home page.
-- ,,,finish this website,,,
 - Creat a dropdown menue for the songs
 - Create a dropdown for lyrics for the songs
+-fix Echo5 Admin passwor for the website
+
+
+
+
+
+
+
+
+
+
 
 most of the male fox images are from thanshuhai fox art.
 
@@ -17,3 +24,9 @@ most of the male fox images are from thanshuhai fox art.
 Data base for the comment section:
 
 https://replit.com/@BabyBoy666/AmbitiousSociableProtools?from=notifications#index.php
+
+
+
+This is the web-site name:
+
+https://webpage2.shadowfang950.repl.co/index.html
